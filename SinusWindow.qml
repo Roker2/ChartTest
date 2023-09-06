@@ -2,11 +2,14 @@ import QtQuick
 import QtCharts
 
 ChartView {
+	id: root
+
 	animationOptions: ChartView.NoAnimation
 	theme: ChartView.ChartThemeDark
 	antialiasing: true
 
 	property double step: 0.1
+	property int dotsCount: 100
 
 	SplineSeries {
 		id: splineSeries
@@ -50,6 +53,12 @@ ChartView {
 		onTriggered: {
 			addPoint()
 			xAxis.max = splineSeries.at(splineSeries.count - 1).x
+			if (splineSeries.count < root.dotsCount) {
+				xAxis.min = 0
+			}
+			else {
+				xAxis.min = splineSeries.at(splineSeries.count - root.dotsCount - 1).x
+			}
 		}
 	}
 
