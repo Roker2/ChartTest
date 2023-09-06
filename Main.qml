@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Window
-import QtCharts
 
 Window {
 	width: 640
@@ -8,7 +7,7 @@ Window {
 	visible: true
 	title: qsTr("Hello World")
 
-	ChartView {
+	SinusWindow {
 		anchors.fill: parent
 	}
 }
