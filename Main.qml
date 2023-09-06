@@ -6,6 +6,7 @@ Window {
 	height: 480
 	visible: true
 	title: qsTr("Hello World")
+	color: Qt.black
 
 	SinusWindow {
 		anchors.fill: parent
