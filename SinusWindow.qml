@@ -1,5 +1,6 @@
 import QtQuick
 import QtCharts
+import QtQuick.Controls
 
 ChartView {
 	id: root
@@ -10,6 +11,31 @@ ChartView {
 
 	property double step: 0.1
 	property int dotsCount: 100
+
+	TextField {
+		id: dotsCountTextField
+
+		anchors.right: parent.right
+		anchors.top: parent.top
+		anchors.topMargin: 9
+		anchors.rightMargin: 9
+		width: 100
+
+		text: dotsCount
+		color: root.titleColor
+		inputMethodHints: Qt.ImhDigitsOnly
+		validator: IntValidator {
+			bottom: 1
+		}
+		background: Rectangle {
+			anchors.fill: parent
+			color: Qt.transparent
+			border.color: splineSeries.color
+		}
+		onEditingFinished: {
+			dotsCount = parseInt(dotsCountTextField.text)
+		}
+	}
 
 	SplineSeries {
 		id: splineSeries
