@@ -18,6 +18,7 @@ qt_add_qml_module(appChartTest
     VERSION 1.0
     QML_FILES Main.qml
     QML_FILES SinusWindow.qml
+    QML_FILES ColoredImage.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
