@@ -12,6 +12,37 @@ ChartView {
 	property double step: 0.1
 	property int dotsCount: 100
 
+	Button {
+		anchors.right: dotsCountTextField.left
+		anchors.top: parent.top
+		anchors.topMargin: 9
+		width: height
+		height: dotsCountTextField.height
+		background: Rectangle {
+			anchors.fill: parent
+			color: "transparent"
+		}
+		contentItem: Item {
+			anchors.fill: parent
+
+			ColoredImage {
+				anchors.fill: parent
+				color: Qt.white
+				visible: !refreshTimer.running
+				source: "qrc:/images/play.svg"
+			}
+
+			ColoredImage {
+				anchors.fill: parent
+				color: Qt.white
+				visible: refreshTimer.running
+				source: "qrc:/images/pause.svg"
+			}
+		}
+
+		onClicked: refreshTimer.running = !refreshTimer.running
+	}
+
 	TextField {
 		id: dotsCountTextField
 
