@@ -68,7 +68,7 @@ ChartView {
 		}
 	}
 
-	SplineSeries {
+	ScatterSeries {
 		id: splineSeries
 		name: "Sin"
 		axisX: xAxis
