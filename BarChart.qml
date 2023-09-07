@@ -52,7 +52,10 @@ ChartView {
 					&& isPressed) {
 				const point = root.mapToValue(Qt.point(mouse.x, mouse.y))
 				let deltaY = point.y - originalPosY
-				barSeries.currentBarSet.replace(barSeries.currentIndex, originalSize + deltaY)
+				let newValue = originalSize + deltaY
+				if (newValue < 0)
+					newValue = 0
+				barSeries.currentBarSet.replace(barSeries.currentIndex, newValue)
 			}
 		}
 
