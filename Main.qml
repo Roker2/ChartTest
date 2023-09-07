@@ -20,6 +20,10 @@ Window {
 		TabButton {
 			text: qsTr("Sinus")
 		}
+
+		TabButton {
+			text: qsTr("Bar chart")
+		}
 	}
 
 	StackLayout {
@@ -31,6 +35,11 @@ Window {
 		currentIndex: tabBar.currentIndex
 
 		SinusWindow {
+			Layout.fillHeight: true
+			Layout.fillWidth: true
+		}
+
+		BarChart {
 			Layout.fillHeight: true
 			Layout.fillWidth: true
 		}
