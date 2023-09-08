@@ -27,14 +27,14 @@ ChartView {
 
 			ColoredImage {
 				anchors.fill: parent
-				color: Qt.white
+				color: "white"
 				visible: !refreshTimer.running
 				source: "qrc:/images/play.svg"
 			}
 
 			ColoredImage {
 				anchors.fill: parent
-				color: Qt.white
+				color: "white"
 				visible: refreshTimer.running
 				source: "qrc:/images/pause.svg"
 			}
