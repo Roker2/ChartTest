@@ -28,6 +28,10 @@ Window {
 		TabButton {
 			text: qsTr("Zoom test")
 		}
+
+		TabButton {
+			text: qsTr("Dots")
+		}
 	}
 
 	StackLayout {
@@ -49,6 +53,11 @@ Window {
 		}
 
 		ZoomWindow {
+			Layout.fillHeight: true
+			Layout.fillWidth: true
+		}
+
+		DotsWindow {
 			Layout.fillHeight: true
 			Layout.fillWidth: true
 		}
