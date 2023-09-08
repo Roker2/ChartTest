@@ -24,6 +24,7 @@ qt_add_qml_module(appChartTest
     QML_FILES ColoredImage.qml
     QML_FILES BarChart.qml
     QML_FILES ZoomWindow.qml
+    QML_FILES DotsWindow.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
