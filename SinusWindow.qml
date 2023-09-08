@@ -60,7 +60,7 @@ ChartView {
 		}
 		background: Rectangle {
 			anchors.fill: parent
-			color: Qt.transparent
+			color: "transparent"
 			border.color: splineSeries.color
 		}
 		onEditingFinished: {
