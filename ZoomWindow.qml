@@ -24,7 +24,7 @@ ChartView {
 		property var firstClick: undefined
 
 		onClicked: (mouse) => {
-			const point = (Qt.point(mouse.x, mouse.y))
+			const point = Qt.point(mouse.x, mouse.y)
 			if (firstClick === undefined) {
 				firstClick = point
 			} else {
