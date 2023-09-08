@@ -5,6 +5,7 @@ ChartView {
 	id: root
 
 	title: "Zoom test"
+	theme: ChartView.ChartThemeDark
 	antialiasing: true
 
 	SplineSeries {
