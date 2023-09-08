@@ -8,7 +8,7 @@ Window {
 	height: 480
 	visible: true
 	title: qsTr("Hello World")
-	color: Qt.black
+	color: "black"
 
 	TabBar {
 		id: tabBar
