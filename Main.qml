@@ -24,6 +24,10 @@ Window {
 		TabButton {
 			text: qsTr("Bar chart")
 		}
+
+		TabButton {
+			text: qsTr("Zoom test")
+		}
 	}
 
 	StackLayout {
@@ -40,6 +44,11 @@ Window {
 		}
 
 		BarChart {
+			Layout.fillHeight: true
+			Layout.fillWidth: true
+		}
+
+		ZoomWindow {
 			Layout.fillHeight: true
 			Layout.fillWidth: true
 		}
