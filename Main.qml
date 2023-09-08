@@ -32,6 +32,10 @@ Window {
 		TabButton {
 			text: qsTr("Dots")
 		}
+
+		TabButton {
+			text: qsTr("Sphere")
+		}
 	}
 
 	StackLayout {
@@ -58,6 +62,11 @@ Window {
 		}
 
 		DotsWindow {
+			Layout.fillHeight: true
+			Layout.fillWidth: true
+		}
+
+		SphereWindow {
 			Layout.fillHeight: true
 			Layout.fillWidth: true
 		}
