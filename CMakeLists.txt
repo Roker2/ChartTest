@@ -38,11 +38,13 @@ set_target_properties(appChartTest PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
+add_subdirectory(CustomStyle)
+
 target_link_libraries(appChartTest
     PRIVATE Qt6::Quick Qt6::Charts
     Qt6::QuickControls2 Qt6::3DCore
     Qt6::3DQuickExtras Qt6::3DRender
-    Qt6::3DInput
+    Qt6::3DInput custom_style_moduleplugin
 )
 
 include(GNUInstallDirs)
