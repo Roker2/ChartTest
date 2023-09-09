@@ -3,6 +3,8 @@ import QtQuick.Window
 import QtQuick.Controls
 import QtQuick.Layouts
 
+import CustomStyle
+
 Window {
 	width: 640
 	height: 480
@@ -17,23 +19,23 @@ Window {
 		anchors.left: parent.left
 		anchors.right: parent.right
 
-		TabButton {
+		CustomTabButton {
 			text: qsTr("Sinus")
 		}
 
-		TabButton {
+		CustomTabButton {
 			text: qsTr("Bar chart")
 		}
 
-		TabButton {
+		CustomTabButton {
 			text: qsTr("Zoom test")
 		}
 
-		TabButton {
+		CustomTabButton {
 			text: qsTr("Dots")
 		}
 
-		TabButton {
+		CustomTabButton {
 			text: qsTr("Sphere")
 		}
 	}
