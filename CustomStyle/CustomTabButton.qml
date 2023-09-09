@@ -14,7 +14,16 @@ TabButton {
 
 	background: Rectangle {
 		anchors.fill: parent
-		color: root.checked ? "#282828" : "black"
 		border.color: "#38AD6B"
+		gradient: Gradient {
+			GradientStop {
+				position: 0.0
+				color: "black"
+			}
+			GradientStop {
+				position: 1.0
+				color: root.checked ? "#3D3D3D" : "black"
+			}
+		}
 	}
 }
