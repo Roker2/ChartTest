@@ -19,11 +19,11 @@ ChartView {
 		XYPoint { x: 3.4; y: 2.3 }
 		XYPoint { x: 4.1; y: 3.1 }
 
-		onDoubleClicked: (points) => {
+		onDoubleClicked: (point) => {
 			remove(point.x, point.y)
 		}
 
-		onHovered: (points) => {
+		onHovered: (point, state) => {
 			if (state) {
 				const position = mapToPosition(point)
 				toolTip.x = position.x
