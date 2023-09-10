@@ -45,7 +45,7 @@ ChartView {
 		onClicked: refreshTimer.running = !refreshTimer.running
 	}
 
-	TextField {
+	CustomTextField {
 		id: dotsCountTextField
 
 		anchors.right: parent.right
@@ -54,22 +54,12 @@ ChartView {
 		anchors.rightMargin: 9
 		width: 100
 
+		borderColor: splineSeries.color
+		centerColor: "transparent"
 		text: dotsCount
-		color: "white"
 		inputMethodHints: Qt.ImhDigitsOnly
 		validator: IntValidator {
 			bottom: 1
-		}
-		background: Rectangle {
-			anchors.fill: parent
-			color: "transparent"
-			border.color: splineSeries.color
-
-			RectangleGradient {
-				anchors.fill: parent
-				borderColor: splineSeries.color
-				centerColor: "transparent"
-			}
 		}
 		onEditingFinished: {
 			dotsCount = parseInt(dotsCountTextField.text)
