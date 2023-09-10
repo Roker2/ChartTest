@@ -5,12 +5,12 @@ import QtQuick.Controls
 ChartView {
 	id: root
 
-	title: "Zoom test"
+	title: "Dots"
 	theme: ChartView.ChartThemeDark
 	antialiasing: true
 
 	ScatterSeries {
-		name: "Spline"
+		name: "Random dots"
 		XYPoint { x: 0; y: 0.0 }
 		XYPoint { x: 1.1; y: 3.2 }
 		XYPoint { x: 1.9; y: 2.4 }
