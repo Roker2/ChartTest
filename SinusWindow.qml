@@ -55,7 +55,7 @@ ChartView {
 		width: 100
 
 		text: dotsCount
-		color: root.titleColor
+		color: "white"
 		inputMethodHints: Qt.ImhDigitsOnly
 		validator: IntValidator {
 			bottom: 1
