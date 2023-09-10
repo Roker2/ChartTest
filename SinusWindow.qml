@@ -2,6 +2,8 @@ import QtQuick
 import QtCharts
 import QtQuick.Controls
 
+import CustomStyle
+
 ChartView {
 	id: root
 
@@ -62,6 +64,12 @@ ChartView {
 			anchors.fill: parent
 			color: "transparent"
 			border.color: splineSeries.color
+
+			RectangleGradient {
+				anchors.fill: parent
+				borderColor: splineSeries.color
+				centerColor: "transparent"
+			}
 		}
 		onEditingFinished: {
 			dotsCount = parseInt(dotsCountTextField.text)
