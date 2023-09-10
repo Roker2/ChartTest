@@ -28,7 +28,9 @@ ChartView {
 				const position = mapToPosition(point)
 				toolTip.x = position.x
 				toolTip.y = position.y
-				toolTip.show("x: " + point.x + ", y:" + point.y)
+				toolTip.show("x: %1, y: %2"
+							 .arg(point.x)
+							 .arg(point.y))
 			} else {
 				toolTip.hide()
 			}
