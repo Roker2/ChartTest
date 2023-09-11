@@ -7,12 +7,18 @@ import CustomStyle
 ChartView {
 	id: root
 
+	property double step: 0.1
+	property int dotsCount: 100
+
+	function addPoint() {
+		var x = splineSeries.count === 0 ? 0 : splineSeries.at(splineSeries.count - 1).x + step ;
+		var y = Math.sin(x);
+		splineSeries.append(x, y);
+	}
+
 	animationOptions: ChartView.NoAnimation
 	theme: ChartView.ChartThemeDark
 	antialiasing: true
-
-	property double step: 0.1
-	property int dotsCount: 100
 
 	Button {
 		anchors.right: dotsCountTextField.left
@@ -115,11 +121,5 @@ ChartView {
 				xAxis.min = splineSeries.at(splineSeries.count - root.dotsCount - 1).x
 			}
 		}
-	}
-
-	function addPoint() {
-		var x = splineSeries.count === 0 ? 0 : splineSeries.at(splineSeries.count - 1).x + step ;
-		var y = Math.sin(x);
-		splineSeries.append(x, y);
 	}
 }

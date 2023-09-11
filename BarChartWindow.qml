@@ -11,10 +11,10 @@ ChartView {
 	BarSeries {
 		id: barSeries
 
-		axisX: BarCategoryAxis { categories: ["2007", "2008", "2009", "2010", "2011", "2012" ] }
-
 		property var currentIndex: undefined
 		property var currentBarSet: undefined
+
+		axisX: BarCategoryAxis { categories: ["2007", "2008", "2009", "2010", "2011", "2012" ] }
 
 		BarSet { label: "Bob"; values: [2, 2, 3, 4, 5, 6] }
 		BarSet { label: "Susan"; values: [5, 1, 2, 4, 1, 7] }
@@ -32,11 +32,12 @@ ChartView {
 	}
 
 	MouseArea {
-		anchors.fill: parent
-		hoverEnabled: true
 		property bool isPressed: false
 		property double originalPosY: 0.0
 		property double originalSize: 0.0
+
+		anchors.fill: parent
+		hoverEnabled: true
 
 		onPressed: (mouse) => {
 			if (barSeries.currentIndex != undefined) {

@@ -20,9 +20,9 @@ ChartView {
 	}
 
 	MouseArea {
-		anchors.fill: parent
-
 		property var firstClick: undefined
+
+		anchors.fill: parent
 
 		onClicked: (mouse) => {
 			const point = Qt.point(mouse.x, mouse.y)
