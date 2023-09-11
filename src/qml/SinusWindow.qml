@@ -79,31 +79,16 @@ ChartView {
 		axisY: yAxis
 	}
 
-	CategoryAxis {
+	ValueAxis {
 		id: xAxis
-		labelsPosition: CategoryAxis.AxisLabelsPositionOnValue
+		min: 0
+		max: 1
 	}
 
-	CategoryAxis {
+	ValueAxis {
 		id: yAxis
 		min: -1
 		max: 1
-		labelsPosition: CategoryAxis.AxisLabelsPositionOnValue
-
-		CategoryRange {
-			label: "-1"
-			endValue: -1
-		}
-
-		CategoryRange {
-			label: "0"
-			endValue: 0
-		}
-
-		CategoryRange {
-			label: "1"
-			endValue: 1
-		}
 	}
 
 	Timer {
