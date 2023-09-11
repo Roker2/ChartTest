@@ -11,9 +11,9 @@ ChartView {
 	property int dotsCount: 100
 
 	function addPoint() {
-		var x = splineSeries.count === 0 ? 0 : splineSeries.at(splineSeries.count - 1).x + step ;
-		var y = Math.sin(x);
-		splineSeries.append(x, y);
+		var x = splineSeries.count === 0 ? 0 : splineSeries.at(splineSeries.count - 1).x + step
+		var y = Math.sin(x)
+		splineSeries.append(x, y)
 	}
 
 	animationOptions: ChartView.NoAnimation
@@ -116,9 +116,9 @@ ChartView {
 			xAxis.max = splineSeries.at(splineSeries.count - 1).x
 			if (splineSeries.count < root.dotsCount) {
 				xAxis.min = 0
-			}
-			else {
-				xAxis.min = splineSeries.at(splineSeries.count - root.dotsCount - 1).x
+			} else {
+				xAxis.min = splineSeries.at(
+							splineSeries.count - root.dotsCount - 1).x
 			}
 		}
 	}
