@@ -12,19 +12,19 @@ qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(appChartTest
     res.qrc
-    main.cpp
+    src/main.cpp
 )
 
 qt_add_qml_module(appChartTest
     URI ChartTest
     VERSION 1.0
-    QML_FILES Main.qml
-    QML_FILES SinusWindow.qml
-    QML_FILES ColoredImage.qml
-    QML_FILES BarChartWindow.qml
-    QML_FILES ZoomWindow.qml
-    QML_FILES DotsWindow.qml
-    QML_FILES SphereWindow.qml
+    QML_FILES src/qml/Main.qml
+    QML_FILES src/qml/SinusWindow.qml
+    QML_FILES src/qml/ColoredImage.qml
+    QML_FILES src/qml/BarChartWindow.qml
+    QML_FILES src/qml/ZoomWindow.qml
+    QML_FILES src/qml/DotsWindow.qml
+    QML_FILES src/qml/SphereWindow.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
