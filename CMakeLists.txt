@@ -21,7 +21,7 @@ qt_add_qml_module(appChartTest
     QML_FILES Main.qml
     QML_FILES SinusWindow.qml
     QML_FILES ColoredImage.qml
-    QML_FILES BarChart.qml
+    QML_FILES BarChartWindow.qml
     QML_FILES ZoomWindow.qml
     QML_FILES DotsWindow.qml
     QML_FILES SphereWindow.qml

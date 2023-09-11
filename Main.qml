@@ -53,7 +53,7 @@ Window {
 			Layout.fillWidth: true
 		}
 
-		BarChart {
+		BarChartWindow {
 			Layout.fillHeight: true
 			Layout.fillWidth: true
 		}
