@@ -29,7 +29,7 @@ ChartView {
 			if (state) {
 				const position = mapToPosition(point)
 				toolTip.x = position.x
-				toolTip.y = position.y
+				toolTip.y = position.y - toolTip.height
 				toolTip.show("x: %1, y: %2"
 							 .arg(point.x)
 							 .arg(point.y))
