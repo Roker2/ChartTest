@@ -10,6 +10,8 @@ ChartView {
 	antialiasing: true
 
 	ScatterSeries {
+		id: scatterSeries
+
 		name: "Random dots"
 		XYPoint { x: 0; y: 0.0 }
 		XYPoint { x: 1.1; y: 3.2 }
@@ -39,5 +41,18 @@ ChartView {
 
 	ToolTip {
 		id: toolTip
+
+		contentItem: Text {
+			anchors.verticalCenter: parent.verticalCenter
+			anchors.horizontalCenter: parent.horizontalCenter
+			text: toolTip.text
+			color: "white"
+		}
+
+		background: Rectangle {
+			anchors.fill: parent
+			color: "black"
+			border.color: scatterSeries.color
+		}
 	}
 }
