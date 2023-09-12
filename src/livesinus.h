@@ -48,7 +48,7 @@ private slots:
     void regenerateFromMax();
 
 private:
-    int _dotsCount{ 10 };
+    int _dotsCount{ 100 };
     double _min{ 0.0 };
     double _max{ 0.0 };
     QList<QPointF> points;

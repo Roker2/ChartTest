@@ -3,12 +3,12 @@ import QtCharts
 import QtQuick.Controls
 
 import CustomStyle
+import ChartTest
 
 ChartView {
 	id: root
 
 	property double step: 0.1
-	property int dotsCount: 100
 
 	function addPoint() {
 		var x = splineSeries.count === 0 ? 0 : splineSeries.at(splineSeries.count - 1).x + step
@@ -62,13 +62,13 @@ ChartView {
 
 		borderColor: splineSeries.color
 		centerColor: "transparent"
-		text: dotsCount
+		text: liveSinus.dotsCount
 		inputMethodHints: Qt.ImhDigitsOnly
 		validator: IntValidator {
 			bottom: 1
 		}
 		onEditingFinished: {
-			dotsCount = parseInt(dotsCountTextField.text)
+			liveSinus.dotsCount = parseInt(dotsCountTextField.text)
 		}
 	}
 
@@ -81,8 +81,8 @@ ChartView {
 
 	ValueAxis {
 		id: xAxis
-		min: 0
-		max: 1
+		min: liveSinus.min
+		max: liveSinus.max
 	}
 
 	ValueAxis {
@@ -91,20 +91,19 @@ ChartView {
 		max: 1
 	}
 
+	LiveSinus {
+		id: liveSinus
+		onPointsAdded: liveSinus.update(splineSeries)
+		Component.onCompleted: liveSinus.update(splineSeries)
+	}
+
 	Timer {
 		id: refreshTimer
 		interval: 100
 		running: true
 		repeat: true
 		onTriggered: {
-			addPoint()
-			xAxis.max = splineSeries.at(splineSeries.count - 1).x
-			if (splineSeries.count < root.dotsCount) {
-				xAxis.min = 0
-			} else {
-				xAxis.min = splineSeries.at(
-							splineSeries.count - root.dotsCount - 1).x
-			}
+			liveSinus.moveRight();
 		}
 	}
 }
