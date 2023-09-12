@@ -13,6 +13,8 @@ qt_standard_project_setup(REQUIRES 6.5)
 qt_add_executable(appChartTest
     res.qrc
     src/main.cpp
+    src/livesinus.h src/livesinus.cpp
+    src/sinustable.h src/sinustable.cpp
 )
 
 qt_add_qml_module(appChartTest
@@ -26,6 +28,8 @@ qt_add_qml_module(appChartTest
     QML_FILES src/qml/DotsWindow.qml
     QML_FILES src/qml/SphereWindow.qml
 )
+
+target_include_directories(appChartTest PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
