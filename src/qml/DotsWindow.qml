@@ -8,6 +8,7 @@ ChartView {
 	title: "Dots"
 	theme: ChartView.ChartThemeDark
 	antialiasing: true
+	animationOptions: ChartView.SeriesAnimations
 
 	ScatterSeries {
 		id: scatterSeries
@@ -30,17 +31,35 @@ ChartView {
 				const position = mapToPosition(point)
 				toolTip.x = position.x
 				toolTip.y = position.y - toolTip.height
-				toolTip.show("x: %1, y: %2"
+				toolTip.animatedShow("x: %1, y: %2"
 							 .arg(point.x)
 							 .arg(point.y))
 			} else {
-				toolTip.hide()
+				toolTip.animatedHide()
 			}
 		}
 	}
 
 	ToolTip {
 		id: toolTip
+
+		property int animationDuration: 100
+
+		function animatedShow(toolTipText) {
+			if (hideAnimation.running)
+				hideAnimation.stop()
+			if (showAnimation.running)
+				showAnimation.stop()
+
+			toolTip.scale = 1
+			toolTip.show(toolTipText)
+			toolTip.scale = 0
+			showAnimation.start()
+		}
+
+		function animatedHide() {
+			hideAnimation.start()
+		}
 
 		contentItem: Text {
 			anchors.verticalCenter: parent.verticalCenter
@@ -53,6 +72,24 @@ ChartView {
 			anchors.fill: parent
 			color: "black"
 			border.color: scatterSeries.color
+		}
+
+		PropertyAnimation {
+			id: hideAnimation
+			target: toolTip
+			property: "scale"
+			to: 0
+			duration: animationDuration
+
+			onStopped: toolTip.hide()
+		}
+
+		PropertyAnimation {
+			id: showAnimation
+			target: toolTip
+			property: "scale"
+			to: 1
+			duration: animationDuration
 		}
 	}
 }
