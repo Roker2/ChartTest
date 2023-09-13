@@ -51,6 +51,8 @@ Scene3D {
 		}
 		PhongMaterial {
 			id: material
+			diffuse: "red"
+			specular: "orange"
 		}
 		Entity {
 			id: sphereEntity
