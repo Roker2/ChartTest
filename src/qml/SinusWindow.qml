@@ -65,7 +65,8 @@ ChartView {
 		text: liveSinus.dotsCount
 		inputMethodHints: Qt.ImhDigitsOnly
 		validator: IntValidator {
-			bottom: 1
+			bottom: 10
+			top: 1000
 		}
 		onEditingFinished: {
 			liveSinus.dotsCount = parseInt(dotsCountTextField.text)
