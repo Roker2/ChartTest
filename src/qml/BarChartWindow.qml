@@ -4,7 +4,6 @@ import QtCharts
 ChartView {
 	id: root
 
-	animationOptions: ChartView.NoAnimation
 	theme: ChartView.ChartThemeDark
 	antialiasing: true
 

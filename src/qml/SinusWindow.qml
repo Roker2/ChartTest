@@ -16,7 +16,7 @@ ChartView {
 		scatterSeries.append(x, y)
 	}
 
-	animationOptions: ChartView.NoAnimation
+	title: "Live sin"
 	theme: ChartView.ChartThemeDark
 	antialiasing: true
 
