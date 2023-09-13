@@ -11,9 +11,9 @@ ChartView {
 	property double step: 0.1
 
 	function addPoint() {
-		var x = splineSeries.count === 0 ? 0 : splineSeries.at(splineSeries.count - 1).x + step
+		var x = scatterSeries.count === 0 ? 0 : scatterSeries.at(scatterSeries.count - 1).x + step
 		var y = Math.sin(x)
-		splineSeries.append(x, y)
+		scatterSeries.append(x, y)
 	}
 
 	animationOptions: ChartView.NoAnimation
@@ -60,7 +60,7 @@ ChartView {
 		anchors.rightMargin: 9
 		width: 100
 
-		borderColor: splineSeries.color
+		borderColor: scatterSeries.color
 		centerColor: "transparent"
 		text: liveSinus.dotsCount
 		inputMethodHints: Qt.ImhDigitsOnly
@@ -73,7 +73,7 @@ ChartView {
 	}
 
 	ScatterSeries {
-		id: splineSeries
+		id: scatterSeries
 		name: "Sin"
 		axisX: xAxis
 		axisY: yAxis
@@ -93,8 +93,8 @@ ChartView {
 
 	LiveSinus {
 		id: liveSinus
-		onPointsAdded: liveSinus.update(splineSeries)
-		Component.onCompleted: liveSinus.update(splineSeries)
+		onPointsAdded: liveSinus.update(scatterSeries)
+		Component.onCompleted: liveSinus.update(scatterSeries)
 	}
 
 	Timer {
