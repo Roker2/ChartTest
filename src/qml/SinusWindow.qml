@@ -58,13 +58,16 @@ ChartView {
 		anchors.top: parent.top
 		anchors.topMargin: 9
 		anchors.rightMargin: 9
-		width: 100
+		width: 150
 
 		borderColor: scatterSeries.color
 		centerColor: "transparent"
 		text: liveSinus.dotsCount
+		placeholderText: "Counts: from %1 to %2".arg(intValidator.bottom).arg(intValidator.top)
 		inputMethodHints: Qt.ImhDigitsOnly
 		validator: IntValidator {
+			id: intValidator
+
 			bottom: 10
 			top: 1000
 		}
