@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTORCC ON)
 
 find_package(Qt6 6.5 REQUIRED COMPONENTS Quick Charts QuickControls2
-                3DCore 3DQuickExtras 3DRender 3DInput)
+                3DCore 3DExtras 3DRender 3DInput)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
@@ -47,7 +47,7 @@ add_subdirectory(CustomStyle)
 target_link_libraries(appChartTest
     PRIVATE Qt6::Quick Qt6::Charts
     Qt6::QuickControls2 Qt6::3DCore
-    Qt6::3DQuickExtras Qt6::3DRender
+    Qt6::3DExtras Qt6::3DRender
     Qt6::3DInput custom_style_moduleplugin
 )
 
