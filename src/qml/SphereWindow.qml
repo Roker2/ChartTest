@@ -45,7 +45,7 @@ Scene3D {
 			matrix: {
 				var m = Qt.matrix4x4()
 				m.rotate(userAngle, Qt.vector3d(0, 1, 0))
-				m.translate(Qt.vector3d(20, 0, 0))
+				m.translate(Qt.vector3d(10, -5, 0))
 				return m
 			}
 		}
