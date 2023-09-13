@@ -8,7 +8,7 @@ import Qt3D.Input
 Scene3D {
 	id: scene3D
 	focus: true
-	aspects: "input"
+	aspects: ["input", "logic"]
 
 	Entity {
 		components: [
