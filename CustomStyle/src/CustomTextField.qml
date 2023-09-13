@@ -8,6 +8,7 @@ TextField {
 	property color centerColor: "yellow"
 
 	color: "white"
+	placeholderTextColor: "yellowgreen"
 	background: Rectangle {
 		anchors.fill: parent
 		color: root.centerColor
