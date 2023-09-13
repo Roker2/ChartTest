@@ -77,6 +77,8 @@ ChartView {
 		name: "Sin"
 		axisX: xAxis
 		axisY: yAxis
+		markerSize: 6
+		borderWidth: 0
 	}
 
 	ValueAxis {
